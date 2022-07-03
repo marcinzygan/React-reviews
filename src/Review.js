@@ -6,24 +6,29 @@ const Review = () => {
   const [index, setIndex] = useState(0);
   const { name, job, image, text } = people[index];
 
-  const nextReview = function () {
-    if (index === people.length - 1) {
-      setIndex(0);
-    } else {
-      setIndex((prevState) => prevState + 1);
+  const checkNumber = function (number) {
+    if (number > people.length - 1) {
+      return 0;
     }
+    if (number < 0) {
+      return people.length - 1;
+    }
+
+    return number;
   };
+  const nextReview = function () {
+    setIndex((prevState) => checkNumber(prevState + 1));
+  };
+
   const prevReview = function () {
-    if (index === 0) {
-      setIndex(people.length - 1);
-    } else {
-      setIndex((prevState) => prevState - 1);
-    }
+    setIndex((prevState) => checkNumber(prevState - 1));
   };
   const randomReview = function () {
     const number = Math.floor(Math.random() * people.length);
     setIndex(number);
-    console.log(number);
+    if (index === number) {
+      setIndex(checkNumber(number + 1));
+    }
   };
   return (
     <article className="review">
