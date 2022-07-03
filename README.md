@@ -13,7 +13,7 @@
 - Display only one Review component with setting state as index
 - Function to move to prev , next or random review
 
-# This project is Live <a href="https://mz-react-tours.netlify.app">Here</a> ! Enjoy .
+# This project is Live <a href="https://mz-react-reviews.netlify.app">Here</a> ! Enjoy .
 
 - Have a nice day 🌞
 - 📫 Find me on <a href="https://marcin-zygan.com">marcin-zygan.com</a>
